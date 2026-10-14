@@ -50,6 +50,14 @@ public class Enemy : MonoBehaviour
 
             player.health -= 5f;
 
+            if (player.health <= 0)
+            {
+                targetTransform = null;
+                Destroy(player.gameObject);
+                canvas.UpdateHealth(0f);
+                GameManager.Instance.GameOver();
+            }
+
             canvas.UpdateHealth(player.health);
         }
     }

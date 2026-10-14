@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator SpawnCoroutine(float interval)
     {
-        while (true)
+        while (!GameManager.Instance.gameOver)
         {
             Vector2 randomPosition = GenerateRandomPosition();
 

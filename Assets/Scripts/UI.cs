@@ -1,14 +1,17 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
     public TextMeshProUGUI healthValueText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public AudioSource audioSource;
+    public AudioClip backgorundMusic;
+
+    private void Start()
     {
-        
+        audioSource.PlayOneShot(backgorundMusic);
     }
 
     public void UpdateHealth(float health)
